@@ -1,8 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using ITBees.Interfaces.Platforms;
 using Microsoft.Extensions.Configuration;
+using Environment = ITBees.Interfaces.Platforms.Environment;
 
-namespace ITBees.Models.Platforms
+namespace ITBees.BaseServices.Platforms
 {
     public class PlatformSettingsService : IPlatformSettingsService
     {
@@ -22,12 +25,13 @@ namespace ITBees.Models.Platforms
 
         public List<string> GetPlatformDebugEmails()
         {
-            throw new System.NotImplementedException();
+            return GetSetting("DebugEmails").Split(";").ToList();
         }
 
         public Environment GetCurrentEnvironment()
         {
-            throw new System.NotImplementedException();
+            var currentEnv = GetSetting("Environemnt");
+            return (Environment) Enum.Parse(typeof(Environment), currentEnv);
         }
     }
 }
