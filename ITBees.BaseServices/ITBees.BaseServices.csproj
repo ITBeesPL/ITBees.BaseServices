@@ -11,4 +11,13 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Platforms\Interfaces\Langs\" />
+    <Folder Include="Platforms\Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\ITBees.Models\ITBees.Models\ITBees.Models.csproj" />
+  </ItemGroup>
+
 </Project>
