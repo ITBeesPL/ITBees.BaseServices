@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using ITBees.Interfaces.Platforms;
+using ITBees.Models.EmailAccounts;
 using Microsoft.Extensions.Configuration;
 using Environment = ITBees.Interfaces.Platforms.Environment;
 
@@ -32,6 +33,24 @@ namespace ITBees.BaseServices.Platforms
         {
             var currentEnv = GetSetting("Environemnt");
             return (Environment) Enum.Parse(typeof(Environment), currentEnv);
+        }
+
+        public EmailAccount GetPlatformDefaultEmailAccount()
+        {
+            var emailAccount = new EmailAccount()
+            {
+                EmailFromTitle = GetSetting("CompanyEmailDisplayName"),
+                Email = GetSetting("CompanyEmail"),
+                SmtpPort = GetSetting("SmtpPort"),
+                ImapServer = GetSetting("ImapServer"),
+                Login = GetSetting("CompanyEmailLogin"),
+                Pass = GetSetting("CompanyEmailPassword"),
+                SmtpServer = GetSetting("SmtpHost"),
+                UseSSL = Convert.ToBoolean(GetSetting("SmtpUseSSL")),
+                UseAdditionalAuthWhenSendingEmail = Convert.ToBoolean(GetSetting("UseAdditionalAuthWhenSendingEmail")),
+                ImapPort = GetSetting("ImapPort"),
+            };
+            return emailAccount;
         }
     }
 }
