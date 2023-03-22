@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ITBees.Interfaces" Version="5.0.4" />
-    <PackageReference Include="ITBees.Models" Version="5.0.12" />
+    <PackageReference Include="ITBees.Interfaces" Version="5.0.5" />
+    <PackageReference Include="ITBees.Models" Version="5.0.14" />
     <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
   </ItemGroup>
