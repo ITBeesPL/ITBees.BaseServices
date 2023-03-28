@@ -6,12 +6,12 @@ namespace ITBees.BaseServices.Settings.Services
 {
     public class ReplaceableValueService
     {
-        public static string Process(string someTestInputString, params ReplacableField[] replaceableField)
+        public static string Process(string someTestInputString, params ReplaceableField[] replaceableField)
         {
             return Process(someTestInputString, null, replaceableField);
         }
 
-        public static string Process(string someTestInputString, IHasReplaceableUpperFields settingClass, params ReplacableField[] replaceableField)
+        public static string Process(string someTestInputString, IHasReplaceableUpperFields settingClass, params ReplaceableField[] replaceableField)
         {
             var sb = new StringBuilder(someTestInputString);
             if (settingClass != null)

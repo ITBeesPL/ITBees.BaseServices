@@ -13,10 +13,10 @@ namespace ITBees.BaseServices.Settings.Services
         /// </summary>
         /// <param name="classThatHaveReplaceableUpperFields"></param>
         /// <returns></returns>
-        public static List<ReplacableField> GetRepacableFieldsWithValues(IHasReplaceableUpperFields classThatHaveReplaceableUpperFields)
+        public static List<ReplaceableField> GetRepacableFieldsWithValues(IHasReplaceableUpperFields classThatHaveReplaceableUpperFields)
         {
             Type settingsType = classThatHaveReplaceableUpperFields.GetType();
-            var result = new List<ReplacableField>();
+            var result = new List<ReplaceableField>();
             foreach (PropertyInfo prop in settingsType.GetProperties())
             {
                 if (prop.PropertyType == typeof(string) &&
@@ -24,7 +24,7 @@ namespace ITBees.BaseServices.Settings.Services
                 {
 
                     string propValue = prop.GetValue(classThatHaveReplaceableUpperFields) as string;
-                    result.Add(new ReplacableField() { Name = prop.Name, Value = propValue });
+                    result.Add(new ReplaceableField(prop.Name, propValue));
                 }
             }
             return result;
