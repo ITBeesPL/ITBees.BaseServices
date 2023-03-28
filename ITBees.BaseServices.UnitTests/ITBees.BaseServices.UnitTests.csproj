@@ -15,8 +15,4 @@
     <ProjectReference Include="..\ITBees.BaseServices\ITBees.BaseServices.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="SettingsTests\" />
-  </ItemGroup>
-
 </Project>
