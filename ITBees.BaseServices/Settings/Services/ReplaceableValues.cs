@@ -4,7 +4,7 @@ using ITBees.BaseServices.Settings.Models;
 
 namespace ITBees.BaseServices.Settings.Services
 {
-    public class ReplaceableValueService
+    public class ReplaceableValues
     {
         public static string Process(string someTestInputString, params ReplaceableField[] replaceableField)
         {

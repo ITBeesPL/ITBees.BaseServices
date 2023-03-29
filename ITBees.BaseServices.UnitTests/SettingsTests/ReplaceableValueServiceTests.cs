@@ -19,7 +19,7 @@ Test text with replacable fields...
 Value  for first setting should be set here :{testSettingImpl.FIRST_SETTING}
 ";
 
-            var processedResult = ReplaceableValueService.Process(someTestInputString, testSettingImpl);
+            var processedResult = ReplaceableValues.Process(someTestInputString, testSettingImpl);
 
             Assert.True(processedResult == someExpectedResultString, $"Expected result was : \n{someExpectedResultString}, but received : \n{processedResult}");
         }
@@ -38,7 +38,7 @@ Test text with replacable fields...
 Value  for first setting should be set here :{testSettingImpl.FIRST_SETTING} Token : {testToken}
 ";
 
-            var processedResult = ReplaceableValueService.Process(someTestInputString, testSettingImpl, new ReplaceableField("TOKEN", testToken));
+            var processedResult = ReplaceableValues.Process(someTestInputString, testSettingImpl, new ReplaceableField("TOKEN", testToken));
 
             Assert.True(processedResult == someExpectedResultString, $"Expected result was : \n{someExpectedResultString}, but received : \n{processedResult}");
         }
@@ -57,7 +57,7 @@ Test text with replacable fields...
 Token : {testToken}
 ";
 
-            var processedResult = ReplaceableValueService.Process(someTestInputString, new ReplaceableField("TOKEN", testToken));
+            var processedResult = ReplaceableValues.Process(someTestInputString, new ReplaceableField("TOKEN", testToken));
 
             Assert.True(processedResult == someExpectedResultString, $"Expected result was : \n{someExpectedResultString}, but received : \n{processedResult}");
         }
