@@ -21,7 +21,7 @@ Value  for first setting should be set here :{testSettingImpl.FIRST_SETTING}
 
             var processedResult = ReplaceableValues.Process(someTestInputString, testSettingImpl);
 
-            Assert.True(processedResult == someExpectedResultString, $"Expected result was : \n{someExpectedResultString}, but received : \n{processedResult}");
+            Assert.That(processedResult == someExpectedResultString, $"Expected result was : \n{someExpectedResultString}, but received : \n{processedResult}");
         }
 
         [Test]
@@ -40,7 +40,7 @@ Value  for first setting should be set here :{testSettingImpl.FIRST_SETTING} Tok
 
             var processedResult = ReplaceableValues.Process(someTestInputString, testSettingImpl, new ReplaceableField("TOKEN", testToken));
 
-            Assert.True(processedResult == someExpectedResultString, $"Expected result was : \n{someExpectedResultString}, but received : \n{processedResult}");
+            Assert.That(processedResult == someExpectedResultString, $"Expected result was : \n{someExpectedResultString}, but received : \n{processedResult}");
         }
 
         [Test]
@@ -59,7 +59,7 @@ Token : {testToken}
 
             var processedResult = ReplaceableValues.Process(someTestInputString, new ReplaceableField("TOKEN", testToken));
 
-            Assert.True(processedResult == someExpectedResultString, $"Expected result was : \n{someExpectedResultString}, but received : \n{processedResult}");
+            Assert.That(processedResult == someExpectedResultString, $"Expected result was : \n{someExpectedResultString}, but received : \n{processedResult}");
         }
     }
 }
