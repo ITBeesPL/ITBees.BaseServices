@@ -9,7 +9,7 @@ namespace ITBees.BaseServices.UnitTests.SettingsTests
         public void GetRepacableFieldsWithValues_shouldReturnOnePropertyFromTestImplementationClassWihchIsInUpperCase()
         {
             var replaceableFields = Replaceable.GetRepacableFieldsWithValues(new TestSettingImpl());
-            Assert.Equals(replaceableFields.Count == 1, $"Expected setting properties count was 1 but received {replaceableFields.Count}");
+            Assert.That(replaceableFields.Count == 1, $"Expected setting properties count was 1 but received {replaceableFields.Count}");
         }
     }
 }
